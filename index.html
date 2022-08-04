@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        /* COMMON */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        section {
+            width: 100%;
+            padding-left: 4em;
+            padding-right: 4em;
+            padding-top: 2em;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #FED136;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 1em 2em 1em 2em;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .header-container {
+            margin-top: 1em;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .header-container .header {
+            font-size: 32px;
+            margin-bottom: 0.5em;
+        }
+
+        .header-container .description {
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            color: grey;
+        }
+
+        .content-container ul {
+            display: flex;
+            justify-content: center;
+            margin-top: 2em;
+        }
+
+        .content-container ul li {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 30%;
+        }
+
+        .content-container ul li p {
+            text-align: center;
+        }
+
+
+        /* NAVBAR */
+        #navbar {
+            /* width: calc(100vw - 8em);
+            height: 150vh; */
+            /* width: 100vw; */
+            /* width: 100%; */
+            height: 150vh;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/header-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav-bar {
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-bar .left-nav .logo {
+            width: 180px;
+            height: 100%;
+
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/navbar-logo.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top;
+        }
+
+        .nav-bar .right-nav .nav-list {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .right-nav .nav-list .nav-content {
+            margin-left: 1.2em;
+        }
+
+        .right-nav .nav-list .nav-content a {
+            color: #fff;
+        }
+
+        .welcome-msg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: calc(100% - 1em - 90px);
+            color: #fff;
+        }
+
+        .welcome-msg .italic {
+            font-size: 2.5em;
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 1em;
+        }
+
+        .welcome-msg .bold-large {
+            font-size: 3.8em;
+            font-style: bold;
+            margin-bottom: 1.2em;
+            text-align: center;
+        }
+
+        .welcome-msg .more-btn {
+            width: 180px;
+            height: 50px;
+        }
+
+        /* SERVICES */
+        #services {
+            padding-bottom: 4em;
+        }
+
+        #services .content-container ul {
+            gap: 3em;
+        }
+
+        #services .content-container ul li>*:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        #services .content-container ul li i {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            font-size: 50px;
+            text-align: center;
+            line-height: 75px;
+            color: #fff;
+            background-color: #FED136;
+        }
+
+        #services .content-container .service-name {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #services .content-container .service-description {
+            width: 80%;
+            color: grey;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.3em;
+
+        }
+
+        /* PORTFOLIO */
+        #portfolio {
+            background-color: #f8f9fa;
+        }
+
+        #portfolio .portfolio-list {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        #portfolio .portfolio-list .portfolio {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex: 1 0 30%;
+            margin: 5px;
+        }
+
+        .portfolio-list .portfolio .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background-color: #fff;
+        }
+
+        .portfolio-list .portfolio .container>div {
+            margin-bottom: 1.2em;
+        }
+
+        .portfolio-list .portfolio .container>h3 {
+            font-size: 22px;
+            margin-bottom: 0.6em;
+        }
+
+        .portfolio-list .portfolio .container>p {
+            margin-bottom: 0.8em;
+            color: grey;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #portfolio .porfolio-img-1 {
+            width: 280px;
+            height: 220px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/portfolio/01-thumbnail.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #portfolio .porfolio-img-2 {
+            width: 280px;
+            height: 220px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/portfolio/02-thumbnail.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #portfolio .porfolio-img-3 {
+            width: 280px;
+            height: 220px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/portfolio/03-thumbnail.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #portfolio .porfolio-img-4 {
+            width: 280px;
+            height: 220px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/portfolio/04-thumbnail.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #portfolio .porfolio-img-5 {
+            width: 280px;
+            height: 220px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/portfolio/05-thumbnail.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #portfolio .porfolio-img-6 {
+            width: 280px;
+            height: 220px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/portfolio/06-thumbnail.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* TEAMS */
+        #teams {
+            background-color: #f8f9fa;
+            padding-bottom: 5em;
+        }
+
+        .team-list .member>div {
+            margin-bottom: 1.2em;
+        }
+
+        .team-list .member>h3 {
+            font-size: 22px;
+            margin-bottom: 0.6em;
+        }
+
+        .team-list .member>p {
+            margin-bottom: 0.8em;
+            color: grey;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+
+        .team-list .member .socials i:not(:first-child) {
+            margin-left: 10px;
+        }
+
+        .team-list .member .socials i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            background-color: #31373d;
+        }
+
+        #teams .member-img-1 {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/team/1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        #teams .member-img-2 {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/team/2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            background-size: contain;
+        }
+
+        #teams .member-img-3 {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background-color: #d8d9da;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/team/3.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            background-size: contain;
+        }
+
+        .team-description {
+            display: flex;
+            justify-content: center;
+            padding-left: 25%;
+            padding-right: 25%;
+        }
+
+        .team-description p {
+            font-family: 'Times New Roman', Times, serif;
+            color: grey;
+            text-align: center;
+            line-height: 1.4em;
+        }
+
+        /* FOOTER */
+        #footer {
+            padding-bottom: 1.2em;
+        }
+
+        #footer .logo-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 3em;
+        }
+
+        #footer .logo-list>div {
+            display: flex;
+            justify-content: center;
+            flex: 1 0 23%;
+        }
+
+        #footer .footer-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #footer .left {
+            color: grey;
+        }
+
+        #footer .center i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            background-color: #31373d;
+        }
+
+        #footer .right {
+            display: flex;
+            gap: 1.5em;
+        }
+
+        #footer .right>* {
+            color: #FED136;
+        }
+
+
+        #footer .logo-img-1 {
+            width: 200px;
+            height: 80px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/logos/envato.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #footer .logo-img-2 {
+            width: 200px;
+            height: 80px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/logos/designmodo.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #footer .logo-img-3 {
+            width: 200px;
+            height: 80px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/logos/themeforest.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #footer .logo-img-4 {
+            width: 200px;
+            height: 80px;
+            background-image: url(./css-e.exams.opt3/css-e.exams.opt3/resources/logos/creative-market.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        /* / Mobile */
+        @media (max-width: 768px) {
+
+            /* NAV */
+            #navbar {
+                padding: 0 !important;
+            }
+
+            .nav-bar {
+                background-color: #212529;
+                padding: 2em 1em 2em 1em;
+            }
+
+            .right-nav{
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-list {
+                display: none !important;
+            }
+
+
+
+            .content-container ul {
+                display: block;
+            }
+
+            .content-container ul li {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+            .header-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+            #footer{
+                display: block !important;
+            }
+
+            #footer .footer-line{
+                flex-direction: column;
+            }
+
+            #footer .footer-line > *{
+                display: flex;
+                align-items: center;
+                margin-bottom: 1em;
+            }
+
+            #footer .footer-line .center{
+                gap: 1em;
+            }
+
+            .mobile {
+                display: block !important;
+            }
+
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        /* //Tablet */
+        @media (min-width: 768px) and (max-width: 1024px) {}
+    </style>
+</head>
+
+<body>
+    <section id="navbar">
+        <nav class="nav-bar">
+            <div class="left-nav">
+                <div class="logo"></div>
+            </div>
+            <div class="right-nav">
+                <ul class="nav-list">
+                    <li class="nav-content"> <a href="#services">SERVICES</a></li>
+                    <li class="nav-content"> <a href="#portfolio">PORTFOLIO</a></li>
+                    <li class="nav-content"> <a href="#about">ABOUT</a></li>
+                    <li class="nav-content"> <a href="#teams">TEAM</a></li>
+                    <li class="nav-content"> <a href="#">CONTACT</a></li>
+                </ul>
+
+                <button class="mobile"><span>
+                        MENU
+                    </span>
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="welcome-msg">
+            <div class="italic">Welcome To Our Studio!</div>
+            <div class="bold-large">IT'S NICE TO MEET YOU</div>
+
+            <button class="more-btn">TELL ME MORE</button>
+        </div>
+    </section>
+    <section id="services">
+        <div class="header-container">
+            <h2 class="header">SERVICES</h2>
+            <p class="description">Lorem ispum dolor sit amet consertetur.</p>
+        </div>
+        <div class="content-container">
+            <ul class="service-list">
+                <li class="service">
+                    <i class="fa fa-shopping-cart"></i>
+                    <h3 class="service-name">E-Commerce</h3>
+                    <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                        voluptatibus tenetur ex id natus corrupti ipsum cum ipsa aut distinctio totam tempora ullam,
+                        consequuntur quam illo accusamus fugit sequi quae.</p>
+                </li>
+                <li class="service">
+                    <i class="fa fa-laptop"></i>
+                    <h3 class="service-name">Responsive Design</h3>
+                    <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                        voluptatibus tenetur ex id natus corrupti ipsum cum ipsa aut distinctio totam tempora ullam,
+                        consequuntur quam illo accusamus fugit sequi quae.</p>
+                </li>
+                <li class="service">
+                    <i class="fa fa-lock"></i>
+                    <h3 class="service-name">Web Security</h3>
+                    <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                        voluptatibus tenetur ex id natus corrupti ipsum cum ipsa aut distinctio totam tempora ullam,
+                        consequuntur quam illo accusamus fugit sequi quae.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="portfolio">
+        <div class="header-container">
+            <h2 class="header">PORTFOLIO</h2>
+            <p class="description">Lorem ispum dolor sit amet consertetur.</p>
+        </div>
+        <div class="content-container">
+            <ul class="portfolio-list">
+                <li class="portfolio">
+                    <div class="container">
+                        <div class="porfolio-img-1"></div>
+                        <h3 class="porfolio-name">Threads</h3>
+                        <p class="portfolio-description">Illustration</p>
+                    </div>
+                </li>
+                <li class="portfolio">
+                    <div class="container">
+                        <div class="porfolio-img-2"></div>
+                        <h3 class="porfolio-name">Explore</h3>
+                        <p class="portfolio-description">Graphic Design</p>
+
+                    </div>
+                </li>
+                <li class="portfolio">
+                    <div class="container">
+                        <div class="porfolio-img-3"></div>
+                        <h3 class="porfolio-name">Finish</h3>
+                        <p class="portfolio-description">Identity</p>
+
+                    </div>
+                </li>
+                <li class="portfolio">
+                    <div class="container">
+                        <div class="porfolio-img-4"></div>
+                        <h3 class="porfolio-name">Lines</h3>
+                        <p class="portfolio-description">Branding</p>
+
+                    </div>
+                </li>
+                <li class="portfolio">
+                    <div class="container">
+                        <div class="porfolio-img-5"></div>
+                        <h3 class="porfolio-name">Southwest</h3>
+                        <p class="portfolio-description">Website Design</p>
+
+                    </div>
+                </li>
+                <li class="portfolio">
+                    <div class="container">
+                        <div class="porfolio-img-6"></div>
+                        <h3 class="porfolio-name">Window</h3>
+                        <p class="portfolio-description">Photography</p>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="teams">
+        <div class="header-container">
+            <h2 class="header">OUR AMAZING TEAM</h2>
+            <p class="description">Lorem ispum dolor sit amet consertetur.</p>
+        </div>
+        <div class="content-container">
+            <ul class="team-list">
+                <li class="member">
+                    <div class="member-img-1"></div>
+                    <h3 class="member-name">Kay Garland</h3>
+                    <p class="member-role">Lead Designer</p>
+                    <div class="socials">
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                    </div>
+                </li>
+                <li class="member">
+                    <div class="member-img-2"></div>
+                    <h3 class="member-name">Larry Parker</h3>
+                    <p class="member-role">Lead Marketer</p>
+                    <div class="socials">
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                    </div>
+                </li>
+                <li class="member">
+                    <div class="member-img-3"></div>
+                    <h3 class="member-name">Diana Petersen</h3>
+                    <p class="member-role">Lead Developer</p>
+                    <div class="socials">
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="team-description">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, aspernatur et deleniti fuga quis
+                    illo earum dignissimos cum atque magnam iure optio facere in aperiam blanditiis pariatur hic quas
+                    voluptates
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="logo-list">
+            <div class="logo">
+                <div class="logo-img-1"></div>
+            </div>
+            <div class="logo">
+                <div class="logo-img-2"></div>
+            </div>
+            <div class="logo">
+                <div class="logo-img-3"></div>
+            </div>
+            <div class="logo">
+                <div class="logo-img-4"></div>
+            </div>
+        </div>
+
+        <div class="footer-line">
+            <div class="left">Copyright @ Your Website 2020</div>
+            <div class="center">
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
+            <div class="right">
+                <div class="content">Privacy Policy</div>
+                <div class="content">Terms of Use</div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
